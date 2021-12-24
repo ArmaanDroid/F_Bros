@@ -14,6 +14,7 @@ import com.example.fbros.databinding.FragmentStopListBinding
 import com.example.fbros.ui.employee.adapter.EmployeeListAdapter
 
 class EmployeeListFragment : Fragment() {
+
     // Binding
     private var _binding : FragmentEmployeesBinding? = null
     private val binding get()= _binding!!
