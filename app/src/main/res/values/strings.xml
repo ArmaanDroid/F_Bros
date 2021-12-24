@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">F&amp;Bros</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_employee">Add Employee</string>
+    <string name="add_route">Add Route</string>
+    <string name="add_stop">Add Stop</string>
+    <string name="text_label_employee">Employees</string>
+    <string name="text_label_routes">Routes</string>
+    <string name="text_label_stops">Stops</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="gender">Gender</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="email_id">Email id</string>
+    <string name="name">Name</string>
+    <string name="location">Location</string>
+    <string name="city">City</string>
+    <string name="stops">Stops</string>
+    <string name="color">Color</string>
+    <string name="pictures">Pictures</string>
+    <string name="address">Address</string>
+    <string name="update">Update</string>
+    <string name="title_edit_employee">Edit Employee Details</string>
+</resources>

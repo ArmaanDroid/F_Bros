@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/employeeListFragment">
+
+    <fragment
+        android:id="@+id/employeeListFragment"
+        android:name="com.example.fbros.ui.employee.EmployeeListFragment"
+        android:label="Employees"
+        tools:layout="@layout/fragment_employees">
+        <action
+            android:id="@+id/action_employeeListFragment_to_addEditEmployeeFragment"
+            app:destination="@id/addEditEmployeeFragment" />
+        <action
+            android:id="@+id/action_employeeListFragment_to_employeeDetailFragment"
+            app:destination="@id/employeeDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEditEmployeeFragment"
+        android:name="com.example.fbros.ui.employee.AddEditEmployeeFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_add_edit_employee">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="employeeId"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_addEditEmployeeFragment_to_employeeListFragment"
+            app:destination="@id/employeeListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/employeeDetailFragment"
+        android:name="com.example.fbros.ui.employee.EmployeeDetailFragment"
+        android:label="Employee Details"
+        tools:layout="@layout/fragment_employee_detail">
+        <argument
+            android:name="employeeId"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_employeeDetailFragment_to_addEditEmployeeFragment"
+            app:destination="@id/addEditEmployeeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/routeListFragment"
+        android:name="com.example.fbros.ui.route.RouteListFragment"
+        android:label="Routes"
+        tools:layout="@layout/fragment_route_list">
+        <action
+            android:id="@+id/action_routeListFragment_to_addEditRouteFragment"
+            app:destination="@id/addEditRouteFragment" />
+        <action
+            android:id="@+id/action_routeListFragment_to_routeDetailFragment"
+            app:destination="@id/routeDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEditRouteFragment"
+        android:name="com.example.fbros.ui.route.AddEditRouteFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_add_edit_route">
+
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="routeId"
+            android:defaultValue="0"
+            app:argType="integer" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/routeDetailFragment"
+        android:name="com.example.fbros.ui.route.RouteDetailFragment"
+        android:label="Route Details"
+        tools:layout="@layout/fragment_route_detail">
+        <action
+            android:id="@+id/action_routeDetailFragment_to_addEditRouteFragment"
+            app:destination="@id/addEditRouteFragment" />
+        <argument
+            android:name="routeId"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEditStopFragment"
+        android:name="com.example.fbros.ui.stop.AddEditStopFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_add_edit_stop">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="stopId"
+            android:defaultValue="0"
+            app:argType="integer" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/stopDetailFragment"
+        android:name="com.example.fbros.ui.stop.StopDetailFragment"
+        android:label="Stop Details"
+        tools:layout="@layout/fragment_stop_detail">
+        <action
+            android:id="@+id/action_stopDetailFragment_to_addEditStopFragment"
+            app:destination="@id/addEditStopFragment" />
+        <argument
+            android:name="stopId"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/stopListFragment"
+        android:name="com.example.fbros.ui.stop.StopListFragment"
+        android:label="Stops"
+        tools:layout="@layout/fragment_stop_list">
+        <action
+            android:id="@+id/action_stopListFragment_to_addEditStopFragment"
+            app:destination="@id/addEditStopFragment" />
+        <action
+            android:id="@+id/action_stopListFragment_to_stopDetailFragment"
+            app:destination="@id/stopDetailFragment" />
+    </fragment>
+
+</navigation>

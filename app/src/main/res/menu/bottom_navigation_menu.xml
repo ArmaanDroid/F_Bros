@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/employeeListFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_train_24"
+        android:title="@string/text_label_employee"/>
+
+    <item
+        android:id="@+id/routeListFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_train_24"
+        android:title="@string/text_label_routes"/>
+
+    <item
+        android:id="@+id/stopListFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_train_24"
+        android:title="@string/text_label_stops"/>
+</menu>
