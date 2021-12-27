@@ -1,4 +1,4 @@
-package com.example.fbros.db.dao
+package com.example.fbros.base
 
 import androidx.room.Delete
 import androidx.room.Insert

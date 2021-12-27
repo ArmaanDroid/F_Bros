@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/employee"
+    app:startDestination="@id/employeeListFragment">
+
+    <fragment
+        android:id="@+id/employeeListFragment"
+        android:name="com.example.fbros.ui.employee.EmployeesFragment"
+        android:label="Employees"
+        tools:layout="@layout/fragment_employees">
+        <action
+            android:id="@+id/action_employeeListFragment_to_addEditEmployeeFragment"
+            app:destination="@id/addEditEmployeeFragment" />
+        <action
+            android:id="@+id/action_employeeListFragment_to_employeeDetailFragment"
+            app:destination="@id/employeeDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEditEmployeeFragment"
+        android:name="com.example.fbros.ui.employee.AddEditEmployeeFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_add_edit_employee">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="employeeId"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_addEditEmployeeFragment_to_employeeListFragment"
+            app:destination="@id/employeeListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/employeeDetailFragment"
+        android:name="com.example.fbros.ui.employee.EmployeeDetailFragment"
+        android:label="Employee Details"
+        tools:layout="@layout/fragment_employee_detail">
+        <argument
+            android:name="employeeId"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_employeeDetailFragment_to_addEditEmployeeFragment"
+            app:destination="@id/addEditEmployeeFragment" />
+    </fragment>
+</navigation>

@@ -7,21 +7,21 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.fbros.R
-import com.example.fbros.databinding.FragmentStopListBinding
-import com.example.fbros.ui.route.RouteListFragmentDirections
+import com.example.fbros.databinding.FragmentStopsBinding
 import com.example.forage.ui.adapter.StopListAdapter
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class StopListFragment : Fragment() {
+class StopsFragment : Fragment() {
 
-    private var _binding : FragmentStopListBinding? = null
-            val binding = _binding!!
+    private var _binding : FragmentStopsBinding? = null
+            val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentStopListBinding.inflate(inflater,container,false)
+        _binding = FragmentStopsBinding.inflate(inflater,container,false)
         return binding.root
     }
 
@@ -29,19 +29,22 @@ class StopListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val adapter = StopListAdapter { stop ->
-            val action = StopListFragmentDirections.actionStopListFragmentToStopDetailFragment()
+            val action = StopsFragmentDirections.actionStopListFragmentToStopDetailFragment()
             findNavController().navigate(action)
         }
 
+        view.findViewById<FloatingActionButton>(R.id.fab_add_stop).setOnClickListener {
+            openAddStop()
+        }
+
         binding.apply {
-            fragment = this@StopListFragment
             recyclerStops.adapter = adapter
         }
 
     }
 
     fun openAddStop(){
-        val action = StopDetailFragmentDirections.actionStopDetailFragmentToAddEditStopFragment(getString(
+        val action = StopsFragmentDirections.actionStopListFragmentToAddEditStopFragment(getString(
             R.string.add_stop))
         findNavController().navigate(action)
     }

@@ -7,7 +7,7 @@ import androidx.room.Query
 
 @Entity(tableName = "routes",)
 data class Route(
-    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id")   val id: Int,
+    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id")   val id: Int = 0,
     @ColumnInfo(name = "name")   val name: String,
     @ColumnInfo(name = "city")   val city: String,
 

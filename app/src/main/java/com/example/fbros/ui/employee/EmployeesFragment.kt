@@ -10,10 +10,9 @@ import androidx.navigation.fragment.findNavController
 import com.example.fbros.FBrosApplication
 import com.example.fbros.R
 import com.example.fbros.databinding.FragmentEmployeesBinding
-import com.example.fbros.databinding.FragmentStopListBinding
 import com.example.fbros.ui.employee.adapter.EmployeeListAdapter
 
-class EmployeeListFragment : Fragment() {
+class EmployeesFragment : Fragment() {
 
     // Binding
     private var _binding : FragmentEmployeesBinding? = null
@@ -37,23 +36,27 @@ class EmployeeListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val adapter = EmployeeListAdapter{ employee->
-            val action = EmployeeListFragmentDirections
+            val action = EmployeesFragmentDirections
                 .actionEmployeeListFragmentToEmployeeDetailFragment(employeeId = employee.id)
             findNavController().navigate(action)
         }
 
         binding.apply{
-            fragment = this@EmployeeListFragment
+//            fragment = this@EmployeesFragment
             recyclerEmployees.adapter = adapter
         }
 
         viewModel.employeeList.observe(viewLifecycleOwner){
             adapter.submitList(it)
         }
+        binding.fabAddEmployee.setOnClickListener {
+            openAddEmployee()
+        }
+
     }
 
     fun openAddEmployee(){
-        val action = EmployeeListFragmentDirections
+        val action = EmployeesFragmentDirections
             .actionEmployeeListFragmentToAddEditEmployeeFragment(getString(
                     R.string.add_employee),0)
         findNavController().navigate(action)

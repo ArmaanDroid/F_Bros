@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/route"
+    app:startDestination="@id/routeListFragment">
+
+    <fragment
+        android:id="@+id/routeListFragment"
+        android:name="com.example.fbros.ui.route.RoutesFragment"
+        android:label="Routes"
+        tools:layout="@layout/fragment_routes">
+        <action
+            android:id="@+id/action_routeListFragment_to_addEditRouteFragment"
+            app:destination="@id/addEditRouteFragment" />
+        <action
+            android:id="@+id/action_routeListFragment_to_routeDetailFragment"
+            app:destination="@id/routeDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addEditRouteFragment"
+        android:name="com.example.fbros.ui.route.AddEditRouteFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_add_edit_route">
+
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="routeId"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_addEditRouteFragment_to_routeListFragment"
+            app:destination="@id/routeListFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/routeDetailFragment"
+        android:name="com.example.fbros.ui.route.RouteDetailFragment"
+        android:label="Route Details"
+        tools:layout="@layout/fragment_route_detail">
+        <action
+            android:id="@+id/action_routeDetailFragment_to_addEditRouteFragment"
+            app:destination="@id/addEditRouteFragment" />
+        <argument
+            android:name="routeId"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+
+</navigation>
