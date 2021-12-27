@@ -31,7 +31,9 @@
             app:argType="integer" />
         <action
             android:id="@+id/action_addEditEmployeeFragment_to_employeeListFragment"
-            app:destination="@id/employeeListFragment" />
+            app:destination="@id/employeeListFragment"
+            app:popUpTo="@id/employeeListFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/employeeDetailFragment"

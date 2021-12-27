@@ -34,7 +34,7 @@ class AddEditRouteFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentAddEditRouteBinding.inflate(inflater,container,false)
         return binding.root
@@ -53,6 +53,7 @@ class AddEditRouteFragment : Fragment() {
         }else{
 
             viewModel.getRouteById(routeId).observe(viewLifecycleOwner){ route ->
+                currentRoute = route
                 bindData(route)
             }
 
@@ -94,6 +95,7 @@ class AddEditRouteFragment : Fragment() {
 
     private fun deleteRoute() {
         viewModel.deleteRoute(currentRoute!!)
+        findNavController().navigate(R.id.action_addEditRouteFragment_to_routeListFragment)
     }
 
     private fun addRoute() {

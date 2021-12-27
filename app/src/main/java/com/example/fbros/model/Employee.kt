@@ -7,6 +7,7 @@ import androidx.room.PrimaryKey
 /**
  * Gender true = male, false = female
  */
+// TODO: 2021-12-26 Add a date parameter to see when record was created
 @Entity(tableName = "employees")
 data class Employee(
     @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") val id: Int = 0,

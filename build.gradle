@@ -4,6 +4,7 @@ buildscript {
         nav_version = "2.3.5"
         room_version = '2.4.0-alpha04'
         lifecycle_version = '2.3.1'
+        testRulesVersion = '1.4.0'
     }
     repositories {
         google()

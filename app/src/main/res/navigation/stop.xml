@@ -17,6 +17,11 @@
             android:name="stopId"
             android:defaultValue="0"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_addEditStopFragment_to_stopListFragment"
+            app:destination="@id/stopListFragment"
+            app:popUpTo="@id/stopListFragment"
+            app:popUpToInclusive="true" />
 
     </fragment>
 

@@ -34,7 +34,9 @@
             app:argType="integer" />
         <action
             android:id="@+id/action_addEditRouteFragment_to_routeListFragment"
-            app:destination="@id/routeListFragment" />
+            app:destination="@id/routeListFragment"
+            app:popUpTo="@id/routeListFragment"
+            app:popUpToInclusive="true" />
 
     </fragment>
 
